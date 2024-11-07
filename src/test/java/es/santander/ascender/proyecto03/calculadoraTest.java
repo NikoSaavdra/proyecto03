@@ -55,10 +55,38 @@ public class calculadoraTest {
 
     @Test
     public void testPresentarTablaMultiplicar() {
+
+        Calculadora calculadora = new Calculadora();
                 
-        calculadora.presentarTablaMultiplicar(6);
+        
+        int[] tablaDeMultiplicar = new int[11]; // crea variable del objeto
+        tablaDeMultiplicar = calculadora.calcularTablaMultiplicar(9);
+        int[] resultado = {1 ,9 ,19 ,27, 36 ,45 ,54 ,63 ,72 ,81 ,90};  
+
+        for (int i = 0; i <= 10; i++) {
+            try {
+                // Compara los elementos del array
+                assertTrue(tablaDeMultiplicar[i] == resultado[i], "El resultado en la posición " + i + " debería ser " + tablaDeMultiplicar[i] + ", pero es " + resultado[i]);
+            } catch (AssertionError e) {
+                // Agrega el error a la lista para reportarlo al final
+                System.out.println("Error en la posición " + i + ": " + e.getMessage());
+            
+        }
+        }
+    }
+
+        @Test
+        public void testCalcularTablaMultiplicarConWhile() {
+
+            Calculadora calculadora = new Calculadora();
+            calculadora.calcularTablaMultiplicarconWhile(9);
+        
 
             }
+
+   
+
+
 }
 
 

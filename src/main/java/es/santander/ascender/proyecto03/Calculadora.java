@@ -17,7 +17,7 @@ public class Calculadora {
         return dividendo/divisor;
     }
     
-    public void presentarTablaMultiplicar(int numero){
+    public  void presentarTablaMultiplicar(int numero){
 
         
         for(int i =0; i <= 10; i++){
@@ -26,6 +26,31 @@ public class Calculadora {
 
         }
     }
+
+    public int[] calcularTablaMultiplicar(int numero) {
+        int[] tablaDeMultiplicar = new int[11];
+        for (int i = 0 ; i <= 10; i++) {
+            tablaDeMultiplicar[i] = i * numero;
+        }
+        return tablaDeMultiplicar;
+    }
+
+    public int[] calcularTablaMultiplicarconWhile(int numero) {
+        //Creo el array
+        int[] tablaDeMultiplicar = new int[11];
+
+        int i = 0;
+        while (i <= tablaDeMultiplicar.length - 1) {
+
+            tablaDeMultiplicar[i] = i * numero;
+            i ++;
+            
+        }
+        
+        // Retorna el array con la tabla de multiplicar
+        return tablaDeMultiplicar;
+    }
+
 
 
 
